@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B6672BC2BF2374C00C87F07 /* IA_ImageGeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6672BB2BF2374C00C87F07 /* IA_ImageGeneratorApp.swift */; };
+		0B6672BE2BF2374C00C87F07 /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6672BD2BF2374C00C87F07 /* PromptView.swift */; };
+		0B6672C02BF2374D00C87F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6672BF2BF2374D00C87F07 /* Assets.xcassets */; };
+		0B6672C32BF2374D00C87F07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6672C22BF2374D00C87F07 /* Preview Assets.xcassets */; };
+		0BEBCFBA2BF3A6E4007945C6 /* ImageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEBCFB92BF3A6E4007945C6 /* ImageStyle.swift */; };
+		0BEBCFBC2BF3D4D9007945C6 /* GeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEBCFBB2BF3D4D9007945C6 /* GeneratorView.swift */; };
+		0BEBCFBE2BF3D754007945C6 /* GeneratorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEBCFBD2BF3D754007945C6 /* GeneratorViewModel.swift */; };
+		0BEBCFC12BF3DADC007945C6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0BEBCFC02BF3DADC007945C6 /* Alamofire */; };
+		0BEBCFC32BF3DADC007945C6 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 0BEBCFC22BF3DADC007945C6 /* AlamofireDynamic */; };
+		0BEBCFC52BF3DB0C007945C6 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEBCFC42BF3DB0C007945C6 /* OpenAIService.swift */; };
+		0BEBCFC72BF3E6D7007945C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEBCFC62BF3E6D6007945C6 /* Constants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B6672B82BF2374C00C87F07 /* IA_ImageGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IA_ImageGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B6672BB2BF2374C00C87F07 /* IA_ImageGeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IA_ImageGeneratorApp.swift; sourceTree = "<group>"; };
+		0B6672BD2BF2374C00C87F07 /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
+		0B6672BF2BF2374D00C87F07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0B6672C22BF2374D00C87F07 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0BEBCFB92BF3A6E4007945C6 /* ImageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStyle.swift; sourceTree = "<group>"; };
+		0BEBCFBB2BF3D4D9007945C6 /* GeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorView.swift; sourceTree = "<group>"; };
+		0BEBCFBD2BF3D754007945C6 /* GeneratorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorViewModel.swift; sourceTree = "<group>"; };
+		0BEBCFC42BF3DB0C007945C6 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		0BEBCFC62BF3E6D6007945C6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B6672B52BF2374B00C87F07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BEBCFC12BF3DADC007945C6 /* Alamofire in Frameworks */,
+				0BEBCFC32BF3DADC007945C6 /* AlamofireDynamic in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B6672AF2BF2374B00C87F07 = {
+			isa = PBXGroup;
+			children = (
+				0B6672BA2BF2374C00C87F07 /* IA_ImageGenerator */,
+				0B6672B92BF2374C00C87F07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0B6672B92BF2374C00C87F07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B6672B82BF2374C00C87F07 /* IA_ImageGenerator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0B6672BA2BF2374C00C87F07 /* IA_ImageGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				0B6672BB2BF2374C00C87F07 /* IA_ImageGeneratorApp.swift */,
+				0B6672BD2BF2374C00C87F07 /* PromptView.swift */,
+				0BEBCFBB2BF3D4D9007945C6 /* GeneratorView.swift */,
+				0BEBCFC42BF3DB0C007945C6 /* OpenAIService.swift */,
+				0BEBCFC62BF3E6D6007945C6 /* Constants.swift */,
+				0BEBCFBD2BF3D754007945C6 /* GeneratorViewModel.swift */,
+				0BEBCFB92BF3A6E4007945C6 /* ImageStyle.swift */,
+				0B6672BF2BF2374D00C87F07 /* Assets.xcassets */,
+				0B6672C12BF2374D00C87F07 /* Preview Content */,
+			);
+			path = IA_ImageGenerator;
+			sourceTree = "<group>";
+		};
+		0B6672C12BF2374D00C87F07 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0B6672C22BF2374D00C87F07 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0B6672B72BF2374B00C87F07 /* IA_ImageGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B6672C62BF2374D00C87F07 /* Build configuration list for PBXNativeTarget "IA_ImageGenerator" */;
+			buildPhases = (
+				0B6672B42BF2374B00C87F07 /* Sources */,
+				0B6672B52BF2374B00C87F07 /* Frameworks */,
+				0B6672B62BF2374B00C87F07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IA_ImageGenerator;
+			packageProductDependencies = (
+				0BEBCFC02BF3DADC007945C6 /* Alamofire */,
+				0BEBCFC22BF3DADC007945C6 /* AlamofireDynamic */,
+			);
+			productName = IA_ImageGenerator;
+			productReference = 0B6672B82BF2374C00C87F07 /* IA_ImageGenerator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B6672B02BF2374B00C87F07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					0B6672B72BF2374B00C87F07 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 0B6672B32BF2374B00C87F07 /* Build configuration list for PBXProject "IA_ImageGenerator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0B6672AF2BF2374B00C87F07;
+			packageReferences = (
+				0BEBCFBF2BF3DADC007945C6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = 0B6672B92BF2374C00C87F07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0B6672B72BF2374B00C87F07 /* IA_ImageGenerator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0B6672B62BF2374B00C87F07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B6672C32BF2374D00C87F07 /* Preview Assets.xcassets in Resources */,
+				0B6672C02BF2374D00C87F07 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B6672B42BF2374B00C87F07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BEBCFBE2BF3D754007945C6 /* GeneratorViewModel.swift in Sources */,
+				0BEBCFBC2BF3D4D9007945C6 /* GeneratorView.swift in Sources */,
+				0BEBCFBA2BF3A6E4007945C6 /* ImageStyle.swift in Sources */,
+				0B6672BE2BF2374C00C87F07 /* PromptView.swift in Sources */,
+				0BEBCFC72BF3E6D7007945C6 /* Constants.swift in Sources */,
+				0B6672BC2BF2374C00C87F07 /* IA_ImageGeneratorApp.swift in Sources */,
+				0BEBCFC52BF3DB0C007945C6 /* OpenAIService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0B6672C42BF2374D00C87F07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0B6672C52BF2374D00C87F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B6672C72BF2374D00C87F07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IA_ImageGenerator/Preview Content\"";
+				DEVELOPMENT_TEAM = 972SSN6428;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marceloamaral.IA-ImageGenerator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0B6672C82BF2374D00C87F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IA_ImageGenerator/Preview Content\"";
+				DEVELOPMENT_TEAM = 972SSN6428;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marceloamaral.IA-ImageGenerator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0B6672B32BF2374B00C87F07 /* Build configuration list for PBXProject "IA_ImageGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B6672C42BF2374D00C87F07 /* Debug */,
+				0B6672C52BF2374D00C87F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B6672C62BF2374D00C87F07 /* Build configuration list for PBXNativeTarget "IA_ImageGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B6672C72BF2374D00C87F07 /* Debug */,
+				0B6672C82BF2374D00C87F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0BEBCFBF2BF3DADC007945C6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0BEBCFC02BF3DADC007945C6 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BEBCFBF2BF3DADC007945C6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		0BEBCFC22BF3DADC007945C6 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BEBCFBF2BF3DADC007945C6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0B6672B02BF2374B00C87F07 /* Project object */;
+}
