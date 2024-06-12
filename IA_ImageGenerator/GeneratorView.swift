@@ -1,50 +1,57 @@
-//
-//  GeneratorView.swift
-//  IA_ImageGenerator
-//
-//  Created by Marcelo Amaral Alves on 2024-05-14.
-//
-
 import SwiftUI
 
 struct GeneratorView: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        VStack(alignment: .leading) {
-            
-            Spacer()
-            
-            Text("Generated Image")
-                .font(.largeTitle)
-                .bold()
-                .foregroundColor(.black)
-                .frame(maxWidth: .infinity, alignment: .center)
-            
-            VStack {
-//                Text("Time spent: \("")")
-                AsyncImage(url: viewModel.image) { image in
-                    image.resizable().aspectRatio(1, contentMode: .fit)
-                } placeholder: {
-                    ProgressView()
-                }
-                .background(Color.gray.opacity(0.2))
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: .infinity)
-                .cornerRadius(20)
+        ZStack {
+            // Adicionando a imagem de fundo
+            Image("clouds") // Substitua "clouds" pelo nome da sua imagem
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .clipped()
-            }
+                .edgesIgnoringSafeArea(.all)
             
-            Spacer()
+            Color.white.opacity(0.6)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(alignment: .leading) {
+                Spacer()
+                
+                Text("Generated Image")
+                    .font(.custom("Inter-Bold", size: 34))
+                    .bold()
+                    .foregroundColor(.black)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                
+                VStack {
+                    AsyncImage(url: viewModel.image) { image in
+                        image.resizable().aspectRatio(1, contentMode: .fit)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .background(Color.gray.opacity(0.2))
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: .infinity)
+                    .cornerRadius(20)
+                    .clipped()
+                }
+                
+                Spacer()
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.black.opacity(0.5))
         }
-        .frame(maxWidth: .infinity)
-        .padding()
-        .background(Color(red: 0.0, green: 0.7, blue: 0.9))
-        .onAppear{
+        .onAppear {
             viewModel.generateImage()
         }
     }
 }
-#Preview {
-    GeneratorView(viewModel: .init(prompt: "red car", selectedStyle: .threeDRender))
+
+struct GeneratorView_Previews: PreviewProvider {
+    static var previews: some View {
+        GeneratorView(viewModel: .init(prompt: "red car", selectedStyle: .threeDRender))
+    }
 }

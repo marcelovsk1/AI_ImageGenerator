@@ -47,6 +47,7 @@ struct PromptView: View {
                                                 RoundedRectangle(cornerRadius: 1)
                                                     .stroke(Color.blue, lineWidth: imageStyle == selectedStyle ? 4 : 0)
                                             )
+                                            .shadow(radius: 10)
                                     }
                                 }
                             }
@@ -68,7 +69,8 @@ struct PromptView: View {
                         .cornerRadius(12)
                         .foregroundColor(.white)
                         .tint(Color.blue)
-                        .frame(height: 300) // Ajuste a altura conforme necessário
+                        .frame(height: 300)
+                        .shadow(radius: 10)
                     
                     Spacer()
                     
