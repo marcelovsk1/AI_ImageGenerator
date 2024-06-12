@@ -83,6 +83,7 @@ struct PromptView: View {
                                 .background(Color.black)
                                 .cornerRadius(10)
                                 .padding(.bottom, 30)
+                                .shadow(radius: 10)
                         }
                     }
                     .frame(maxWidth: .infinity)
