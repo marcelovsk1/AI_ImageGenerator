@@ -4,7 +4,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Image("vangogh")
+                Image("vangogh1")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -12,7 +12,7 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 // Overlay escuro para melhorar a legibilidade
-                Color.white.opacity(0.4)
+                Color.white.opacity(0.5)
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack(spacing: 40) {
