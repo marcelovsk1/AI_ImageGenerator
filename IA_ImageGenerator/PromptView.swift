@@ -15,11 +15,14 @@ struct PromptView: View {
                     .clipped()
                     .edgesIgnoringSafeArea(.all)
                 
+                Color.white.opacity(0.2)
+                    .edgesIgnoringSafeArea(.all)
+                
                 VStack(alignment: .leading) {
                     Text("Image_Generator")
                         .font(.custom("Inter-Bold", size: 34))
                         .foregroundColor(.black)
-                        .padding(.top, 30)
+                        .padding(.top, 40)
                         .shadow(radius: 10)
                     
                     Text("Choose a Style")
@@ -79,7 +82,7 @@ struct PromptView: View {
                                 .padding()
                                 .background(Color.black)
                                 .cornerRadius(10)
-                                .padding(.bottom, 50)
+                                .padding(.bottom, 30)
                         }
                     }
                     .frame(maxWidth: .infinity)
