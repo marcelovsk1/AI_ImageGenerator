@@ -22,7 +22,7 @@ struct HomeView: View {
                         .font(.custom("Inter-Bold", size: 34))
                         .foregroundColor(.black)
                         .padding(.bottom, 50) // Ajusta o espaço abaixo do texto
-                        .shadow(radius: 10)
+                        .shadow(radius: 3)
                     
                     VStack(spacing: 30) {
                         NavigationLink(destination: ChatView()) {
@@ -35,10 +35,10 @@ struct HomeView: View {
                             }
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color.black.opacity(0.7))
+                            .background(Color.black.opacity(0.8))
                             .cornerRadius(15)
                             .padding(.horizontal, 40)
-                            .shadow(radius: 10)
+                            .shadow(radius: 3)
                         }
                         
                         NavigationLink(destination: PromptView()) {
@@ -54,7 +54,7 @@ struct HomeView: View {
                             .background(Color.black.opacity(0.8))
                             .cornerRadius(15)
                             .padding(.horizontal, 40)
-                            .shadow(radius: 10)
+                            .shadow(radius: 3)
                         }
                     }
                     

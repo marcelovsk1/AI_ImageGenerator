@@ -23,7 +23,7 @@ struct PromptView: View {
                         .font(.custom("Inter-Bold", size: 34))
                         .foregroundColor(.black)
                         .padding(.top, 40)
-                        .shadow(radius: 10)
+                        .shadow(radius: 3)
                     
                     Text("Choose a Style")
                         .font(.custom("Inter-Bold", size: 24))
@@ -47,7 +47,7 @@ struct PromptView: View {
                                                 RoundedRectangle(cornerRadius: 1)
                                                     .stroke(Color.blue, lineWidth: imageStyle == selectedStyle ? 4 : 0)
                                             )
-                                            .shadow(radius: 10)
+                                            .shadow(radius: 3)
                                     }
                                 }
                             }
@@ -70,7 +70,7 @@ struct PromptView: View {
                         .foregroundColor(.white)
                         .tint(Color.blue)
                         .frame(height: 300)
-                        .shadow(radius: 10)
+                        .shadow(radius: 3)
                     
                     Spacer()
                     

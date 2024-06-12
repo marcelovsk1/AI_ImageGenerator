@@ -1,15 +1,20 @@
 import SwiftUI
 
-struct Message: Identifiable {
+struct Message: Identifiable, Equatable {
     let id = UUID()
     let text: String
     let isUser: Bool
+
+    static func == (lhs: Message, rhs: Message) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 struct ChatView: View {
     @State private var messages: [Message] = []
     @State private var inputText: String = ""
     @State private var errorMessage: String? = nil
+    @State private var isLoading = false
     
     var body: some View {
         ZStack {
@@ -22,7 +27,7 @@ struct ChatView: View {
                 .edgesIgnoringSafeArea(.all)
             
             // Overlay escuro para melhorar a legibilidade
-            Color.black.opacity(0.3)
+            Color.black.opacity(0.6)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
@@ -38,13 +43,15 @@ struct ChatView: View {
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
                                         .padding(.horizontal, 20)
+                                        .transition(.move(edge: .trailing))
                                 } else {
                                     Text(message.text)
                                         .padding()
-                                        .background(Color.black.opacity(0.6))
-                                        .foregroundColor(.white)
+                                        .background(Color.white.opacity(0.8))
+                                        .foregroundColor(.black)
                                         .cornerRadius(10)
                                         .padding(.horizontal, 20)
+                                        .transition(.move(edge: .leading))
                                     Spacer()
                                 }
                             }
@@ -52,9 +59,6 @@ struct ChatView: View {
                     }
                     .padding(.top, 60)
                 }
-//                .background(Color(UIColor.systemGroupedBackground).opacity(0.8))
-//                .cornerRadius(10)
-//                .padding()
                 
                 if let errorMessage = errorMessage {
                     Text(errorMessage)
@@ -68,15 +72,20 @@ struct ChatView: View {
                         .shadow(radius: 2)
                         .padding(.leading, 10)
                     
-                    Button(action: sendMessage) {
-                        Text("Enviar")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.black)
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
+                    if isLoading {
+                        ProgressView()
+                            .padding(.trailing, 10)
+                    } else {
+                        Button(action: sendMessage) {
+                            Text("Enviar")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.black)
+                                .cornerRadius(10)
+                                .shadow(radius: 5)
+                        }
+                        .padding(.trailing, 10)
                     }
-                    .padding(.trailing, 10)
                 }
                 .padding(.bottom, 50)
             }
@@ -84,21 +93,26 @@ struct ChatView: View {
         .navigationTitle("Chat")
         .background(Color(UIColor.systemBackground).opacity(0.8))
         .edgesIgnoringSafeArea(.bottom)
+        .animation(.easeInOut, value: messages)
     }
     
     func sendMessage() {
         let userMessage = Message(text: inputText, isUser: true)
         messages.append(userMessage)
         inputText = ""
+        isLoading = true
         
         OpenAIChatService.shared.sendMessage(userMessage.text) { response in
             DispatchQueue.main.async {
+                isLoading = false
                 if response.contains("Erro") {
                     self.errorMessage = response
                 } else {
                     self.errorMessage = nil
                     let responseMessage = Message(text: response, isUser: false)
-                    messages.append(responseMessage)
+                    withAnimation {
+                        messages.append(responseMessage)
+                    }
                 }
             }
         }

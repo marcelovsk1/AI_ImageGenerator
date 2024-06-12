@@ -24,6 +24,7 @@ struct GeneratorView: View {
                     .bold()
                     .foregroundColor(.black)
                     .frame(maxWidth: .infinity, alignment: .center)
+                    .shadow(radius: 3)
                 
                 VStack {
                     AsyncImage(url: viewModel.image) { image in
