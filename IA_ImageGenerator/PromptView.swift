@@ -22,13 +22,10 @@ struct PromptView: View {
                         .padding(.top, 30)
                         .shadow(radius: 10)
                     
-                    
                     Text("Choose a Style")
                         .font(.custom("Inter-Bold", size: 24))
                         .foregroundColor(.black)
-
                         .shadow(radius: 10)
-                    
                     
                     GeometryReader { reader in
                         ScrollView(.horizontal, showsIndicators: false) {
@@ -45,8 +42,7 @@ struct PromptView: View {
                                             .clipped()
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 1)
-                                                    .stroke(Color.blue,
-                                                            lineWidth: imageStyle == selectedStyle ? 4 : 0)
+                                                    .stroke(Color.blue, lineWidth: imageStyle == selectedStyle ? 4 : 0)
                                             )
                                     }
                                 }
@@ -55,7 +51,7 @@ struct PromptView: View {
                     }
                     .frame(height: 250)
                     
-                    Spacer(minLength: 0)  // Reduzir ou remover o espaço
+                    Spacer(minLength: 0)
                     
                     Text("Enter a prompt")
                         .font(.custom("Inter-Bold", size: 20))
@@ -69,6 +65,7 @@ struct PromptView: View {
                         .cornerRadius(12)
                         .foregroundColor(.white)
                         .tint(Color.blue)
+                        .frame(height: 300) // Ajuste a altura conforme necessário
                     
                     Spacer()
                     
@@ -82,6 +79,7 @@ struct PromptView: View {
                                 .padding()
                                 .background(Color.black)
                                 .cornerRadius(10)
+                                .padding(.bottom, 50)
                         }
                     }
                     .frame(maxWidth: .infinity)
