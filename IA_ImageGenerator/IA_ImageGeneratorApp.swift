@@ -11,7 +11,7 @@ import SwiftUI
 struct IA_ImageGeneratorApp: App {
     var body: some Scene {
         WindowGroup {
-            PromptView()
+            HomeView()
         }
     }
 }

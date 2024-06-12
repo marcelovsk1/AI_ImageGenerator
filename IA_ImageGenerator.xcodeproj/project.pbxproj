@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B33C0232C19DD1D002F779B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B33C0222C19DD1D002F779B /* HomeView.swift */; };
+		0B33C0252C19DD8A002F779B /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B33C0242C19DD8A002F779B /* ChatView.swift */; };
+		0B33C0282C19DFAF002F779B /* OpenAiChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B33C0272C19DFAF002F779B /* OpenAiChatService.swift */; };
 		0B6672BC2BF2374C00C87F07 /* IA_ImageGeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6672BB2BF2374C00C87F07 /* IA_ImageGeneratorApp.swift */; };
 		0B6672BE2BF2374C00C87F07 /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6672BD2BF2374C00C87F07 /* PromptView.swift */; };
 		0B6672C02BF2374D00C87F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6672BF2BF2374D00C87F07 /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B33C0222C19DD1D002F779B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0B33C0242C19DD8A002F779B /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		0B33C0272C19DFAF002F779B /* OpenAiChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAiChatService.swift; sourceTree = "<group>"; };
 		0B6672B82BF2374C00C87F07 /* IA_ImageGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IA_ImageGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6672BB2BF2374C00C87F07 /* IA_ImageGeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IA_ImageGeneratorApp.swift; sourceTree = "<group>"; };
 		0B6672BD2BF2374C00C87F07 /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 		0B6672BA2BF2374C00C87F07 /* IA_ImageGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				0B6672BF2BF2374D00C87F07 /* Assets.xcassets */,
 				0B6672BB2BF2374C00C87F07 /* IA_ImageGeneratorApp.swift */,
 				0B6672BD2BF2374C00C87F07 /* PromptView.swift */,
 				0BEBCFBB2BF3D4D9007945C6 /* GeneratorView.swift */,
@@ -72,8 +79,10 @@
 				0BEBCFC62BF3E6D6007945C6 /* Constants.swift */,
 				0BEBCFBD2BF3D754007945C6 /* GeneratorViewModel.swift */,
 				0BEBCFB92BF3A6E4007945C6 /* ImageStyle.swift */,
-				0B6672BF2BF2374D00C87F07 /* Assets.xcassets */,
 				0B6672C12BF2374D00C87F07 /* Preview Content */,
+				0B33C0222C19DD1D002F779B /* HomeView.swift */,
+				0B33C0272C19DFAF002F779B /* OpenAiChatService.swift */,
+				0B33C0242C19DD8A002F779B /* ChatView.swift */,
 			);
 			path = IA_ImageGenerator;
 			sourceTree = "<group>";
@@ -167,9 +176,12 @@
 				0BEBCFBC2BF3D4D9007945C6 /* GeneratorView.swift in Sources */,
 				0BEBCFBA2BF3A6E4007945C6 /* ImageStyle.swift in Sources */,
 				0B6672BE2BF2374C00C87F07 /* PromptView.swift in Sources */,
+				0B33C0252C19DD8A002F779B /* ChatView.swift in Sources */,
 				0BEBCFC72BF3E6D7007945C6 /* Constants.swift in Sources */,
 				0B6672BC2BF2374C00C87F07 /* IA_ImageGeneratorApp.swift in Sources */,
 				0BEBCFC52BF3DB0C007945C6 /* OpenAIService.swift in Sources */,
+				0B33C0232C19DD1D002F779B /* HomeView.swift in Sources */,
+				0B33C0282C19DFAF002F779B /* OpenAiChatService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

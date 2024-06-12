@@ -18,7 +18,7 @@ struct GeneratorView: View {
             Text("Generated Image")
                 .font(.largeTitle)
                 .bold()
-                .foregroundColor(.blue)
+                .foregroundColor(.black)
                 .frame(maxWidth: .infinity, alignment: .center)
             
             VStack {
@@ -39,7 +39,7 @@ struct GeneratorView: View {
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(Color(red: 1.0, green: 0.9, blue: 0.0))
+        .background(Color(red: 0.0, green: 0.7, blue: 0.9))
         .onAppear{
             viewModel.generateImage()
         }

@@ -33,13 +33,14 @@ struct PromptView: View {
                                 }) {
                                     Image(imageStyle.rawValue)
                                         .resizable()
-                                        .background(Color.blue)
+                                        .background(Color.yellow)
                                         .scaledToFill()
                                         .frame(width: reader.size.width * 0.4, height: reader.size.width * 0.4 * 1.4)
                                         .clipped()
+                                        .shadow(radius: 10)
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 1)
-                                                .stroke(Color.blue,
+                                                .stroke(Color.yellow,
                                                         lineWidth: imageStyle == selectedStyle ? 4 : 0)
                                         )
                                 }
@@ -60,10 +61,11 @@ struct PromptView: View {
                 TextEditor(text: $promptText)
                     .scrollContentBackground(.hidden)
                     .padding()
-                    .background(Color(red: 1.0, green: 1.0, blue: 0.0))
+                    .background(Color(red: 0.0, green: 0.7, blue: 0.9))
                     .cornerRadius(12)
                     .foregroundColor(.black)
                     .tint(Color.yellow)
+//                    .shadow(radius: 10)
                 
                 Spacer()
                 
@@ -76,14 +78,15 @@ struct PromptView: View {
                             .bold()
                             .foregroundColor(.white)
                             .padding()
-                            .background(Color.blue)
+                            .background(Color(red: 0.0, green: 0.7, blue: 0.9))
                             .cornerRadius(10)
+                            .shadow(radius: 10)
                     }
                 }
                 .frame(maxWidth: .infinity)
             }
             .padding()
-            .background(Color(red: 1.0, green: 0.9, blue: 0.0))
+            .background(Color(red: 0.0, green: 0.5, blue: 0.8))
             //        .edgesIgnoringSafeArea(.all)
         }
     }
