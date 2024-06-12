@@ -15,6 +15,7 @@ struct ChatView: View {
     @State private var inputText: String = ""
     @State private var errorMessage: String? = nil
     @State private var isLoading = false
+    @State private var messageText: String = ""
     
     var body: some View {
         ZStack {
@@ -37,7 +38,7 @@ struct ChatView: View {
                             HStack {
                                 if message.isUser {
                                     Spacer()
-                                    Text(message.text)
+                                    TextEditor(text: $message.text)
                                         .padding()
                                         .background(Color.black.opacity(0.9))
                                         .foregroundColor(.white)
@@ -67,7 +68,7 @@ struct ChatView: View {
                 }
                 
                 HStack {
-                    TextField("Digite sua mensagem", text: $inputText)
+                    TextField("Enter your message", text: $inputText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .shadow(radius: 2)
                         .padding(.leading, 10)
@@ -77,7 +78,7 @@ struct ChatView: View {
                             .padding(.trailing, 10)
                     } else {
                         Button(action: sendMessage) {
-                            Text("Enviar")
+                            Text("Send")
                                 .foregroundColor(.white)
                                 .padding()
                                 .background(Color.black)
@@ -87,11 +88,11 @@ struct ChatView: View {
                         .padding(.trailing, 10)
                     }
                 }
-                .padding(.bottom, 50)
+                .padding(.bottom, 70)
             }
         }
         .navigationTitle("Chat")
-        .background(Color(UIColor.systemBackground).opacity(0.8))
+        .background(Color.white)
         .edgesIgnoringSafeArea(.bottom)
         .animation(.easeInOut, value: messages)
     }

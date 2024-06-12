@@ -18,8 +18,8 @@ struct HomeView: View {
                 VStack(spacing: 40) {
                     Spacer()
                     
-                    Text("Bem-vindo ao AI Image Generator")
-                        .font(.custom("Inter-Bold", size: 34))
+                    Text("Welcome to the Artify_AI")
+                        .font(.custom("Inter-Bold", size: 36))
                         .foregroundColor(.black)
                         .padding(.bottom, 50) // Ajusta o espaço abaixo do texto
                         .shadow(radius: 3)
