@@ -14,7 +14,7 @@ struct ChatView: View {
     var body: some View {
         ZStack {
             // Adicionando a imagem de fundo
-            Image("clouds")
+            Image("vangogh")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
